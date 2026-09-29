@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "Multicenter iEEG dataset for classification of graphoelements and artifactual signals (FNUSA)",
-  "description": "A multicenter intracranial electroencephalography (iEEG) dataset comprising segmented 3-second single-channel clips from epilepsy patients, annotated for graphoelement classification and artifact detection. The dataset includes clinical metadata such as seizure onset zone (SOZ) flags, anatomical localization, and electrode characteristics from St. Anne's University Hospital. This resource supports the development and validation of automated signal processing algorithms for clinical neurophysiology applications.",
-  "methods_description": "iEEG data were recorded from epilepsy patients and segmented into independent 3-second single-channel clips. The clips were concatenated at 5000 Hz sampling rate, with event markers preserving original labels, segment identifiers, anatomical information, reviewer identifiers, SOZ flags, and electrode types. Data were converted from segmented .mat archives to BIDS format using BrainVision iEEG conversion protocols.",
+  "description": "This dataset contains independent 3-second single-channel intracranial EEG (stereo-EEG) clips from St. Anne's University Hospital (FNUSA), annotated for classification of physiological and pathological graphoelements and artifactual signals. It is a BIDS conversion of the segmented .mat archives released with Nejedly et al. 2020. Clips from one subject and one SEEG contact are concatenated per run at 5000 Hz, with events preserving labels, anatomy, reviewer, seizure onset zone flag, and electrode type.",
+  "methods_description": "Independent 3 s single-channel iEEG clips recorded from SEEG contacts were concatenated per subject and contact at 5000 Hz and converted to BrainVision format in BIDS. Events mark clip boundaries and retain the original label, segment_id, anatomy, reviewer_id, SOZ flag, and electrode type. Patient-specific electrode coordinates were not released.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -34,26 +34,31 @@
       "term": "intracranial EEG"
     },
     {
+      "term": "stereo-EEG"
+    },
+    {
+      "term": "Electroencephalography",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D004569"
+    },
+    {
+      "term": "artifact classification"
+    },
+    {
+      "term": "graphoelements"
+    },
+    {
       "term": "epilepsy"
     },
     {
-      "term": "signal classification"
-    },
-    {
-      "term": "artifact detection"
-    },
-    {
       "term": "seizure onset zone"
-    },
-    {
-      "term": "neurophysiology"
     }
   ],
   "related_identifiers": [
     {
       "identifier": "10.1038/s41597-020-0532-5",
       "identifier_type": "DOI",
-      "relation_type": "References"
+      "relation_type": "IsDescribedBy"
     },
     {
       "identifier": "https://github.com/nemarDatasets/nm000183",
@@ -77,7 +82,7 @@
     "ieeg"
   ],
   "sizes": [
-    "22.4 GB (1907 files)"
+    "20.82 GB (1907 files)"
   ],
   "formats": [
     ".eeg",
